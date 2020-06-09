@@ -26,12 +26,12 @@
                 </div>
             </div>
             <div class="menu" id="menu">
-                <a href="#inicio" class="active" id="homeM">Inicio</a>
-                <a href="#acerca" id="aboutM">Acerca de</a>
-                <a href="#number" id="servicesM">Servicios Satisfechos</a>
-                <!-- <a href="#">Portafolio</a> -->
-                <a href="#contact" id="contactM">Contáctanos</a>
-                <a href="#gallery" id="galleryM">Galeria</a>
+                <a href="#inicio">Inicio</a>
+                <a href="#equipo">Nuestro equipo</a>
+                <a href="#number">Servicios Satisfechos</a>
+                <a href="#contact">Contáctanos</a>
+                <a href="#acerca">Acerca de</a>
+                <a href="#gallery">Galeria</a>
             </div>
         </nav>
         <header class="welcome">
@@ -41,7 +41,7 @@
                 </h2>
             </div>
         </header>
-        <section class="sectionP">
+        <section class="sectionP" id="equipo">
             <div class="presentation">
                 <div class="summaryC">
                     <div class="summary">
@@ -381,9 +381,28 @@
                         </div>
                     </div>
             </div>
+            <div class="credits">
+                <a href="https://www.freepik.es/psd/maqueta" target="_blanck">Psd de Maqueta creado por denamorado - www.freepik.es</a>
+            </div>
         </footer>
     </div>
-    <script src="js/swiper.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/swiper.js"></script>
+    <script>
+        // Galeria con Swiper
+        let swiper = new Swiper(".swiper-container", {
+            slidesPerView: "auto",
+            loop: true,
+            spaceBetween: 10,
+            // disableOnInteraction: false,
+            navigation: {
+                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+            },
+            autoplay: {
+                delay: 1500,
+            },
+        })
+    </script>
 </body>
 </html>

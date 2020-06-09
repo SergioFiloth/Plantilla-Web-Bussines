@@ -41,37 +41,46 @@ h6 {
   position: sticky;
   width: 100%;
   top: 0px;
-  font-size: 1rem;
-  z-index: 2; }
-  .navigation .menu {
+  font-size: 1.1rem;
+  z-index: 2;
+  background-color: #898d8e; }
+  .navigation .buttonT {
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
     background-color: #898d8e;
+    cursor: pointer; }
+  .navigation .menu {
     text-align: center;
     transition: all .3s;
-    display: none; }
+    display: none;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    animation: desplazamiento .5s ease; }
     .navigation .menu a {
       width: 100%;
       text-decoration: none;
       color: #ffffff;
       height: 100%;
       display: inline-block;
-      padding: 1rem 0; }
+      padding: 1rem 0;
+      transition: all ease .5s; }
       .navigation .menu a:nth-child(1) {
         margin-left: 0;
-        background-color: #7d9097;
-        color: #000000; }
+        background-color: #7d9097; }
+      .navigation .menu a:hover {
+        background-color: #904e39;
+        color: #ffffff; }
+    .navigation .menu.menuDB {
+      display: block;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%); }
     @media screen and (min-width: 768px) {
       .navigation .menu {
-        padding: 0 2rem; } }
-  .navigation .menuDB {
-    display: block; }
-  .navigation .buttonT {
-    text-align: center;
-    width: 100%;
-    padding: 1rem;
-    background-color: #898d8e; }
+        padding: 0 2rem;
+        clip-path: none; } }
   @media screen and (min-width: 1024px) {
     .navigation .menu {
-      display: flex; }
+      display: flex;
+      animation: desplazamiento 1s ease; }
       .navigation .menu li {
         display: inline-block;
         padding: 0 2rem;
@@ -79,6 +88,11 @@ h6 {
     .navigation .buttonT {
       display: none; } }
 
+@keyframes desplazamiento {
+  from {
+    transform: translateY(-500px); }
+  to {
+    transform: translateY(0); } }
 .welcome {
   text-align: center;
   font-size: 16px;
@@ -95,6 +109,7 @@ h6 {
   height: 500px; }
   .welcome > div {
     width: auto;
+    animation: entradaY 1s ease;
     height: auto; }
     .welcome > div h2 {
       font-weight: 200;
@@ -103,12 +118,23 @@ h6 {
       .welcome > div h2 span {
         display: block;
         color: #fb794a; }
+@keyframes entradaY {
+  from {
+    transform: translateY(1000px); }
+  to {
+    transform: translate(0); } }
   @media screen and (min-width: 1024px) {
     .welcome {
       justify-content: flex-end;
       align-items: flex-end; }
       .welcome > div {
-        margin-bottom: 2rem; } }
+        margin-bottom: 2rem;
+        animation: entradaX 1s ease; }
+    @keyframes entradaX {
+      from {
+        transform: translateX(1000px); }
+      to {
+        transform: translateX(0); } } }
 
 .sectionP {
   display: flex;
@@ -390,5 +416,20 @@ h6 {
       border: 1px solid #9E9E9E;
       display: inline-block;
       border-radius: 50%; }
+
+.credits {
+  background-color: #000000;
+  text-align: center;
+  padding: 2rem; }
+  .credits a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all ease .5s; }
+    .credits a:active {
+      color: inherit; }
+    .credits a:hover {
+      color: #a95e39; }
 
 /*# sourceMappingURL=style.css.map */
